@@ -6,7 +6,10 @@ df2=get_price("J2001.XDCE", start_date='2019-1-11', end_date='2019-12-22', frequ
 data=df2.dropna()
 low=data.loc[:,"low"].values
 high=data.loc[:,"high"].values
-
+"""
+鉴于talib提供的SAR算法与文化财经等指标算出来的不一致，自己实现了SAR算法，并在joinquant 平台亲自验证
+计算结果和文化财经完全一致,可直接复制打joinquant平台验证
+"""
 class SarData:#存储结构
     af=[]
     ep=[]
